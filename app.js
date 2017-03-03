@@ -1,3 +1,4 @@
+'use strict'
 /* Is this testable / readable? */
 // console.time('For-Loop-time-execution')
 // var total = 0,
@@ -79,11 +80,11 @@
 
 
 /* Is this testable / readable? Ramda version*/
-console.time('Ramda-time-execution');
 const R = require('Ramda');
+console.time('Ramda-time-execution');
 let range = R.range(10);
 let isEven = n => n % 2 === 0;
-let square = n => n ** 2;
+let square = n => Math.pow(n, 2);
 let sum = nums => nums.reduce((total, num) => total + num);
 let length = nums => nums.length;
 let average = nums => sum(nums) / length(nums);
@@ -91,4 +92,4 @@ let chainedFun = R.pipe(range, R.filter(isEven), R.map(square), average);
 let result = chainedFun(21)
 
 console.log('average: ', result);
-console.timeEnd('Ramda-time-execution') //285.282ms
+console.timeEnd('Ramda-time-execution');
