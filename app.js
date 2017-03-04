@@ -92,4 +92,4 @@ let chainedFun = R.pipe(range, R.filter(isEven), R.map(square), average);
 let result = chainedFun(21)
 
 console.log('average: ', result);
-console.timeEnd('Ramda-time-execution');
+console.timeEnd('Ramda-time-execution'); //4.334ms
